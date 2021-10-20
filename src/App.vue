@@ -40,7 +40,7 @@
     mounted: () => {
       let engine = Engine.create();
       let width = document.querySelector("#drawhere").offsetWidth
-      let height = document.querySelector("#data-container").offsetHeight - document.querySelector("#information").offsetHeight - 100
+      let height = document.querySelector("#data-container").offsetHeight - document.querySelector("#information").offsetHeight - 60
 
       let render = Render.create({
         element: document.querySelector("#drawhere"),
