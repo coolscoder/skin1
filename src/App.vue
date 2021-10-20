@@ -40,7 +40,7 @@
     mounted: () => {
       let engine = Engine.create();
       let width = document.querySelector("#drawhere").offsetWidth
-      let height = document.querySelector("#data-container").offsetHeight - document.querySelector("#information").offsetHeight - 50
+      let height = document.querySelector("#data-container").offsetHeight - document.querySelector("#information").offsetHeight - 100
 
       let render = Render.create({
         element: document.querySelector("#drawhere"),
@@ -52,14 +52,18 @@
         }
       });
 
-      let boxA = Bodies.rectangle(width / 2, 200, 80, 80);
-      let ballA = Bodies.circle(width / 2 - 10, 100, 40, 10);
-      let ballB = Bodies.circle(width / 2 + 5, 10, 40, 10);
-      let leftWall = Bodies.rectangle(1, height / 2, 1, height,  { isStatic: true,render: { fillStyle: 'white' }});
-      let rightWall = Bodies.rectangle(width - 1, height / 2, 1, height,  { isStatic: true,render: { fillStyle: 'white' }});
+      let name = Bodies.rectangle(20, 100, 200, 40);
+      let boxA = Bodies.rectangle(width / 2, 10, 100, 60);
+      let profile = Bodies.circle(width - 30, 100, 50, 10);
+      let instagram = Bodies.circle(10, 10, 40, 10);
+      let Circle = Bodies.circle(width / 2 + 5, 170, 35, 10);
+      let Youtube = Bodies.circle(width - 30, 80, 60, 10);
+      let Twitch = Bodies.circle(width / 2, 20, 70, 30);
+      let leftWall = Bodies.rectangle(1, height / 2, 1, height,  { isStatic: true, render: { fillStyle: 'white' }});
+      let rightWall = Bodies.rectangle(width - 1, height / 2, 1, height,  { isStatic: true, render: { fillStyle: 'white' }});
       let ground = Bodies.rectangle(width / 2, height, height, 1,  { isStatic: true,render: { fillStyle: 'white' }});
 
-      World.add(engine.world, [boxA, ballA, ballB, ground, leftWall, rightWall]);
+      World.add(engine.world, [name, boxA, profile, instagram, Circle, Youtube, Twitch, ground, leftWall, rightWall]);
 
       Engine.run(engine);
 
@@ -74,14 +78,18 @@
     font-family: Helvetica;
     display: flex;
     justify-content: center;
+    background-color: #000;
   }
 	#data-container {
     background-color: #fff;
     border-radius: 20px;
     width: 90vw;
     max-width: 300px;
-    height: 100vh;
+    height: 92vh;
     padding-top: 20px;
+    #information {
+      padding-left: 20px;
+    }
 	}
 	[data-avatar]{
 		position: relative;
