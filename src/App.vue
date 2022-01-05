@@ -26,7 +26,7 @@
       linkdrip:{
         skin: 'SKIN_NAME',
         profile:{
-          image: "https://smhlancers.org/wp-content/uploads/2016/06/profile-placeholder-300x300.png",
+          image: "kid.png",
           name:{
             text: "Webbendr"
           },
